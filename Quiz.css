@@ -77,6 +77,7 @@ body {
 
 .header h3{
 	font-size: 1em;
+	margin-bottom: 3%;
 
 }
 
@@ -88,3 +89,77 @@ body {
 		color: white;
 		text-align: center;
 		}
+
+.setImg{
+
+	width: 100%;
+	
+}
+
+.setImg img{
+	width: 9.5em;
+	border-radius: 6em;
+	height: 9.5em;
+	margin-top: 5em;
+	margin-right: 3em;
+	margin-left: 8em;
+	border: solid .30em #DF0101;
+	display: inline-block;
+
+}
+
+.setImg img:hover{
+
+		width: 12.5em;
+		border-radius: 8em;
+		height: 11.5em;
+	
+	}
+
+
+
+
+.questions {
+
+	margin-top: 5em;
+	/*border: solid red 1px; */
+	text-align: center;
+	line-height: 3em;
+
+}
+
+.questions h1{
+	font-size: 2em;
+
+}
+
+
+
+.setImg li{
+	display: inline;
+}
+
+#set1 {
+	visibility: visible;
+}
+
+#q1 {
+
+	visibility: visible;
+}
+
+
+#set2 {
+	visibility: hidden;
+
+}
+
+#q2{
+
+	visibility: hidden;
+}
+
+.counter{
+
+	line-height: 2em;
+}
