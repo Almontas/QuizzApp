@@ -34,6 +34,14 @@ for (var i = 0; i < questions.length; i++)
 
 }
 
+//function to set visibility on and off
+
+$('.setImage li').on('click', function () {
+	$(howdoItargetobject?).hide()
+}
+
+
+
 //function to setOnclic value.
 
 $('.setImage li').on('click', function (e) {
