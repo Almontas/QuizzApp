@@ -1,21 +1,21 @@
 $(document).ready(function () {  
 
 var questions = [
-{text: "Who is Zach Morris?",
+{question: "Who is Zach Morris?",
  choices: ['images/ACslater.jpg','images/CarltonBanks.jpeg','images/ZachMorris.jpg'],
  quesNum: 1,
  correctAns: 2},
 
- {text: "Who is Corey Matthews?",
+ {question: "Who is Corey Matthews?",
  choices: ['images/CoryMatthews.jpeg','images/EdAlonzo.jpg','images/Shawnhunter.jpg'],
  quesNum: 2,
  correctAns: 1},
 
  ];
 
- //var userAnswer  //THis needs to be looked into
- //var counter = 0;
- //var score = 0;
+ var userAnswer  //THis needs to be looked into
+ var counter = 0;
+ var score = 0;
  var html_string = '';
 
 
@@ -24,9 +24,9 @@ var questions = [
 for (var i = 0; i < questions.length; i++)
 {
 	 // put current question into a variable for convenience.
-   var currentQuestion = questions.text[i];
+   var currentQuestion = questions[i];
    // put the question string between paragraph tags
-   html_string += '<p>' + currentQuestion.question + '</p>';
+   html_string += '<p>' + currentQuestion.question + '</p>';  //1stQuestionTHIS IS NOT PASSING.  //2nd Question NO IMAGES
    // create an unordered list for the choices
    html_string += '<ul>';
    // loop through the choices array
@@ -35,6 +35,8 @@ for (var i = 0; i < questions.length; i++)
       html_string += '<li><img src="' + currentQuestion.choices[j] + '"></li>';
    }
    html_string += '</ul>';
+   counter++;
+
 }
 
 $('.setImg').html(html_string);
@@ -49,14 +51,14 @@ $('.setImg').html(html_string);
 
 //function to setOnclic value.
 
-//$('.setImage li').on('click', function (e) {
-	//userAnswer = $(this).index();
-//}
+$('.setImage li').on('click', function (e) {
+	userAnswer = $(this).index();
+}
 
 //function to identify right question
 
 //function checkAnswer () 
-//{
+{
 	//if (userAnswer === questions[counter].correctAns)///double check this approach 
 	//{
 		//score+100;	
