@@ -26,7 +26,7 @@ for (var i = 0; i < questions.length; i++)
 	 // put current question into a variable for convenience.
    var currentQuestion = questions[i];
    // put the question string between paragraph tags
-   html_string += '<p>' + currentQuestion.question + '</p>';  //1stQuestionTHIS IS NOT PASSING.  //2nd Question NO IMAGES
+   html_string += '<p>' + currentQuestion.question + '</p>';  //1stQuestionTHIS IS NOT PASSING.  //2nd Question why is the second questionnot passing.
    // create an unordered list for the choices
    html_string += '<ul>';
    // loop through the choices array
@@ -41,7 +41,7 @@ for (var i = 0; i < questions.length; i++)
 
 $('.setImg').html(html_string);
 
-//function to set visibility on and off
+//function to set visibility on and off NEED TO SET ONCLICK FUNCTION to move forward. 
 
 //$('.setImage li').on('click', function () {
 	//$(howdoItargetobject?).hide()
@@ -57,13 +57,13 @@ $('.setImage li').on('click', function (e) {
 
 //function to identify right question
 
-//function checkAnswer () 
+function checkAnswer () 
 {
-	//if (userAnswer === questions[counter].correctAns)///double check this approach 
-	//{
-		//score+100;	
-	//}
-//}
+	(userAnswer === questions[counter].correctAns)
+	{
+		score+100;	
+	}
+}
 
 
 
