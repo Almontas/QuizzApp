@@ -1,15 +1,17 @@
 $(document).ready(function () {  
 
 var questions = [
-{question: "Who is Zach Morris?",
+{question: "Who is Zack Morris?",
  choices: ['images/ACslater.jpg','images/CarltonBanks.jpeg','images/ZachMorris.jpg'],
  quesNum: 1,
- correctAns: 2},
+ correctAns: 2
+ feedback: "Zack was the main character on the famous show Saved by the Bell"},
 
  {question: "Who is Corey Matthews?",
  choices: ['images/CoryMatthews.jpeg','images/EdAlonzo.jpg','images/Shawnhunter.jpg'],
  quesNum: 2,
- correctAns: 1},
+ correctAns: 1
+ feedback: "Corey was the protagonist of Boy Meets World"},
 
  ];
 
@@ -21,12 +23,11 @@ var questions = [
 
 //function to loop choices in HTML, updates counter, checks answer
 
-for (var i = 0; i < questions.length; i++)
-{
-	 // put current question into a variable for convenience.
-   var currentQuestion = questions[i];
+var update_html = function(currentQuestion) {
+    // put current question into a variable for convenience.
+   
    // put the question string between paragraph tags
-   html_string += '<p>' + currentQuestion.question + '</p>';  //1stQuestionTHIS IS NOT PASSING.  //2nd Question why is the second questionnot passing.
+   html_string = '<p>' + currentQuestion.question + '</p>';  
    // create an unordered list for the choices
    html_string += '<ul>';
    // loop through the choices array
@@ -35,34 +36,37 @@ for (var i = 0; i < questions.length; i++)
       html_string += '<li><img src="' + currentQuestion.choices[j] + '"></li>';
    }
    html_string += '</ul>';
+   $('.setImg').html(html_string);
+}
+
+update_html(questions[0]);
+
+
+$('.setImg li').on('click', function (e) {
+   userAnswer = $(this).index();
+   checkAnswer();
    counter++;
-
-}
-
-$('.setImg').html(html_string);
-
-//function to set visibility on and off NEED TO SET ONCLICK FUNCTION to move forward. 
-
-//$('.setImage li').on('click', function () {
-	//$(howdoItargetobject?).hide()
-//}
-
-
-
-//function to setOnclic value.
-
-$('.setImage li').on('click', function (e) {
-	userAnswer = $(this).index();
-}
+   update_html(questions[counter]);
+});
 
 //function to identify right question
 
 function checkAnswer () 
 {
-	(userAnswer === questions[counter].correctAns)
-	{
-		score+100;	
-	}
+   (userAnswer === questions[counter].correctAns)
+   {
+      score+100;  
+   }
+}
+
+function showFinalFeedback ()
+{
+   if counter === 1 
+   {
+
+
+   }
+
 }
 
 
