@@ -4,14 +4,12 @@ var questions = [
 {question: "Who is Zack Morris?",
  choices: ['images/ACslater.jpg','images/CarltonBanks.jpeg','images/ZachMorris.jpg'],
  quesNum: 1,
- correctAns: 2
- feedback: "Zack was the main character on the famous show Saved by the Bell"},
+ correctAns: 2},
 
  {question: "Who is Corey Matthews?",
  choices: ['images/CoryMatthews.jpeg','images/EdAlonzo.jpg','images/Shawnhunter.jpg'],
  quesNum: 2,
- correctAns: 1
- feedback: "Corey was the protagonist of Boy Meets World"},
+ correctAns: 1},
 
  ];
 
@@ -19,7 +17,7 @@ var questions = [
  var counter = 0;
  var score = 0;
  var html_string = '';
-
+ var string4end = ''
 
 //function to loop choices in HTML, updates counter, checks answer
 
@@ -47,6 +45,7 @@ $('.setImg li').on('click', function (e) {
    checkAnswer();
    counter++;
    update_html(questions[counter]);
+   //showFinalFeedback(questions[counter);
 });
 
 //function to identify right question
@@ -61,14 +60,14 @@ function checkAnswer ()
 
 function showFinalFeedback ()
 {
-   if counter === 1 
+   if (counter === (questions.length+1))
    {
-
+      string4end = '<p>' + 'You made it here!!!!' + '</p>';  
 
    }
-
+$('.setImg').html(string4end);
 }
-
+//showFinalFeedback(questions[0]);
 
 
 
