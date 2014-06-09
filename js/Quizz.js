@@ -13,11 +13,11 @@ var questions = [
 
  ];
 
- var userAnswer  //THis needs to be looked into
+ var userAnswer;
  var counter = 0;
  var score = 0;
  var html_string = '';
- var string4end = ''
+ var string4end = '';
 
 //function to loop choices in HTML, updates counter, checks answer
 
@@ -46,14 +46,14 @@ $('.setImg li').on('click', function (e) {
    counter++;
    update_html(questions[counter]);
    $('#score').html(score);
-   //showFinalFeedback(questions[counter);
+   showFinalFeedback();
 });
 
 //function to identify right question
 
 function checkAnswer () 
 {
-   (userAnswer === questions[counter].correctAns)
+   if (userAnswer === questions[counter].correctAns)
    {
       score=+100;  
    }
@@ -62,11 +62,12 @@ function checkAnswer ()
 function showFinalFeedback ()
 {
    if (counter === (questions.length+1))
-   {
-      string4end = '<p>' + 'You made it here!!!!' + '</p>';  
 
+   { 	   	
+      string4end = '<p>' + 'You made it here!!!!' + '</p>';  
+       $('.setImg').html(string4end);		   	
    }
-$('.setImg').html(string4end);
+
 }
 //showFinalFeedback(questions[0]);
 
