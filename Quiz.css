@@ -64,20 +64,21 @@ body {
 
 .header {
 		width: 100%;
-		background-color: blue;
+		background-color: black;
 		color: white;
 		text-align: center;
 }
 
 .header h1{
 	font-size: 2em;
-	margin-bottom: 1%;
-
+	margin-bottom: 2%;
+	padding-top: 1%;
 }
 
 .header h3{
 	font-size: 1em;
 	margin-bottom: 3%;
+	padding-bottom: 1%;
 
 }
 
@@ -96,17 +97,21 @@ body {
 	
 }
 
+
 .setImg img{
 	width: 9.5em;
 	border-radius: 6em;
 	height: 9.5em;
-	margin-top: 5em;
+	margin-top: 3em;
 	margin-right: 3em;
-	margin-left: 8em;
-	border: solid .30em #DF0101;
+	margin-left: 11em;
+	border: solid .30em black;
 	display: inline-block;
+	padding: 0;
+	
 
 }
+
 
 .setImg img:hover{
 
@@ -115,6 +120,15 @@ body {
 		height: 11.5em;
 	
 	}
+
+.setImg p{
+	text-align: center;
+	font-weight: bold;
+	font-size: 2em;
+
+}
+
+
 
 
 
@@ -160,6 +174,10 @@ body {
 }
 
 .counter{
-
+	background-color: black;
 	line-height: 2em;
+}
+
+.counter p {
+	border-margin-top: 1em;
 }

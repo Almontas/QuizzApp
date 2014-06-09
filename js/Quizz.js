@@ -45,6 +45,7 @@ $('.setImg li').on('click', function (e) {
    checkAnswer();
    counter++;
    update_html(questions[counter]);
+   $('#score').html(score);
    //showFinalFeedback(questions[counter);
 });
 
@@ -54,7 +55,7 @@ function checkAnswer ()
 {
    (userAnswer === questions[counter].correctAns)
    {
-      score+100;  
+      score=+100;  
    }
 }
 
