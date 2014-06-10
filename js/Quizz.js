@@ -18,6 +18,7 @@ var questions = [
  var score = 0;
  var html_string = '';
  var string4end = '';
+  var currentQuestion = questions[counter];
 
 //function to loop choices in HTML, updates counter, checks answer
 
@@ -40,7 +41,8 @@ var update_html = function(currentQuestion) {
 update_html(questions[0]);
 
 
-$('.setImg li').on('click', function (e) {
+$('.setImg li').on('click', function () {
+   console.log('button click');
    userAnswer = $(this).index();
    checkAnswer();
    counter++;
@@ -61,15 +63,20 @@ function checkAnswer ()
 
 function showFinalFeedback ()
 {
-   if (counter === (questions.length+1))
+   if (counter === (questions.length))
 
    { 	   	
-      string4end = '<p>' + 'You made it here!!!!' + '</p>';  
+      string4end = '<p>' + 'You made it here!!!!' + '</p>'; 
+      string4end += '<p>' + 'Your score is Score' + '</p>'; 
+      if (score===100){string4end += '<p>' + 'You know some tv' + '</p>'}
+      if (score===200){string4end += '<p>' + 'Well, awesome work, you answered everything right!' + '</p>'}
+      if (score===0){string4end += '<p>' + 'Really? Go watch more TV' + '</p>'}
        $('.setImg').html(string4end);		   	
-   }
+      }
+   
 
 }
-//showFinalFeedback(questions[0]);
+//showFinalFeedback();
 
 
 
